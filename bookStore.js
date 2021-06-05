@@ -185,7 +185,7 @@ class BookStore {
         let storeIndex = this.#getStoreIndex();
         let stores = getJson().stores;
         let booksIdOrTitle = stores[storeIndex].books.map(book => {
-            return (typeof idOrTitle == 'number')
+            return (Number.isIntegar(idOrTitle))
             ? book.id
             : book.title
         })

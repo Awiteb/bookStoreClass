@@ -197,10 +197,8 @@ class BookStore {
     #storeIsExist(storeName) {
         storeName = (storeName == undefined) ? this.name :storeName;
         let data = getJson();
-        let storesName = data.stores.map(store => {
-            return store.name;
-        })
-        return storesName.indexOf(storeName) != -1;
+        let isExist = data.stores.some(store => store.name == storeName);
+        return isExist;
     }
     #addStore() {
         let storeOb = {
